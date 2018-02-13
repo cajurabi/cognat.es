@@ -3,8 +3,10 @@ layout: archive
 title: Cognates
 permalink: /cognates/
 ---
-{% for item in site.cognates %}
-  <h2>{{ item.title }}</h2>
-  <p>{{ item.description }}</p>
-  <p><a href="{{ item.url }}">{{ item.title }}</a></p>
+{% assign sorted_cognates = (site.cognates | sort) %}
+{% for item in sorted_cognates %}
+  {% if item.title != 'Cognates' %}
+    <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+    <p>{{ item.description }}</p>
+  {% endif %}
 {% endfor %}

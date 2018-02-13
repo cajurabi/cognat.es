@@ -1,0 +1,19 @@
+---
+layout: single
+---
+{% if page.description %}
+<h1>Meaning</h1>
+<p>{{ page.description }}</p>
+{% endif %}
+{% if page.languages %}
+  {% assign sorted = (page.languages | sort) %}
+  {% for language in sorted %}
+    {% if language[1].word %}
+      <h3 id="{{ language[0] }}">{{ language[0] | replace: "_", " "| capitalize }}</h3>
+      <div>Spelling: {{ language[1].word | downcase }}</div>
+      {% if language[1].ipa %}
+        <div>Pronuciation: {{ language[1].ipa }}</div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

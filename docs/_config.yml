@@ -100,7 +100,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "cajurabi"
+  github           : "cajurabi/cognat.es"
   gitlab           :
   google_plus      :
   keybase          :
@@ -266,7 +266,10 @@ defaults:
       path: ""
       type: cognates
     values:
-      layout: single
-      author_profile: true
+      layout: cognate
+      author_profile: false
       share: true
       comments: true
+      toc: true
+      toc_label: "Languages"
+
